@@ -5,15 +5,10 @@
 ** Login   <lacroi_m@epitech.net>
 ** 
 ** Started on  Sun Jan 17 17:58:27 2016 zemax DUC
-** Last update Sun Jan 17 19:30:32 2016 zemax DUC
+** Last update Sun Jan 17 19:33:34 2016 zemax DUC
 */
-
-#include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
 #include "get_next_line.h"
 
 int          my_strlen(char *str)
