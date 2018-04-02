@@ -5,7 +5,7 @@
 ** Login   <lacroi_m@epitech.net>
 ** 
 ** Started on  Sun Jan 17 17:58:27 2016 zemax DUC
-** Last update Sun Jan 17 19:33:34 2016 zemax DUC
+** Last update Mon Apr  2 20:15:25 2018 DESKTOP-FQFT07H
 */
 #include <stdlib.h>
 #include <unistd.h>
@@ -71,20 +71,18 @@ char            *save_check(char **cache)
 
   i = 0;
   if (*cache != NULL)
-    {
-      while (cache[i] != '\0')
-	{
-	  if (*cache[i] == '\n')
-	    {
-	      tmp = *cache;
-	      line = my_strndup(*cache, i);
-	      *cache = my_strndup(*cache + i + 1, my_strlen(*cache + i + 1));
-	      free(tmp);
-	      return (line);
-	    }
-	  ++i;
-	}
-    }
+    while (cache[i] != '\0')
+      {
+	if (*cache[i] == '\n')
+	  {
+	    tmp = *cache;
+	    line = my_strndup(*cache, i);
+	    *cache = my_strndup(*cache + i + 1, my_strlen(*cache + i + 1));
+	    free(tmp);
+	    return (line);
+	  }
+	++i;
+      }
   return (NULL);
 }
 
@@ -97,9 +95,7 @@ char		*get_next_line(const int fd)
   int		read_size;
 
   if ((line = save_check(&cache)) != NULL)
-    {
-      return (line);
-    }
+    return (line);
   while ((read_size = read(fd, buffer, READ_SIZE)) > 0)
     {
       buffer[read_size] = '\0';
